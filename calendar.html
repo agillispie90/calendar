@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="calendar.css">
+    </head>
+    <body>
+        <div class="container">
+
+        <div class="calBody">
+            <div class="month"><i onclick="changeMonth('minus')"><</i><p id="month"></p><i onclick="changeMonth('plus')">></i></div>
+        <div  class="year"><i onclick="changeYear('minus');"><</i><p id='year'></p><i onclick="changeYear('plus');">></i></div>
+        <div class="dayContainer">
+            <div  class="dayName"> Sun </div>
+            <div  class="dayName"> Mon </div>
+            <div  class="dayName"> Tue </div>
+            <div  class="dayName"> Wed </div>
+            <div  class="dayName"> Thu </div>
+            <div  class="dayName"> Fri </div>
+            <div  class="dayName"> Sat </div>
+        </div>
+        <div id="days">
+            <p class="daysgen"  id="0"></p>
+            <p class="daysgen" id="1"></p>
+            <p class="daysgen" id="2"></p>
+            <p class="daysgen" id= "3"></p>
+            <p class="daysgen" id="4"></p>
+            <p class="daysgen" id="5"></p>
+            <p class="daysgen" id="6"></p>
+        </div>
+        
+    </div>
+    
+    </div>
+    <p id="datepick"></p>
+      
+        
+        <script src="calendar.js" async defer></script>
+    </body>
+</html>
