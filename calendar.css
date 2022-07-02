@@ -4,6 +4,10 @@
     font-family: 'Anek Malayalam', sans-serif;
 }
 
+body {
+    background: rgb(69,94,140);
+    background: radial-gradient(circle, rgb(156, 168, 190) 5%, rgb(75, 85, 114) 100%);
+}
 
 .container {
     display: grid;
@@ -16,8 +20,7 @@
 .calBody {
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.359);
     padding: 10px;
-    background: rgb(69,94,140);
-background: radial-gradient(circle, rgb(156, 168, 190) 5%, rgb(75, 85, 114) 100%);
+    background-color: lightgray;
     width: 800px;
     height: max-content;
     display: inline-block;
@@ -33,10 +36,11 @@ background: radial-gradient(circle, rgb(156, 168, 190) 5%, rgb(75, 85, 114) 100%
     margin-top: 10px;
     font-size: 3rem;
     font-weight: bolder;
+    
 }
 
-.month > i {
-    color: red;
+ i {
+    color: rgb(12, 14, 41);
     font-weight: bold;
 }
 
@@ -51,10 +55,10 @@ i:hover {
 
 #days>p {
     font-size: 2rem;
-    color: white;
+    color: rgb(12, 14, 41);
     width:50px;  
     height: 50px;
-    text-shadow:black 2px 5px 5px;    
+    text-shadow:white 2px 5px 5px;    
 }
 
 .year {
@@ -66,13 +70,11 @@ i:hover {
    
 }
 
-.year > i {
-    color: red;
-    font-weight: bold;
-}
+
 
 .dayContainer {
-    color: white;
+    color: rgb(12, 14, 41);
+    font-weight: bold;
     text-shadow: 5px 5px 5px 5px black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -106,8 +108,12 @@ i:hover {
 }
 
 #month {
-    color: white;
+    color: rgb(12, 14, 41);
     font-weight: bold;
+}
+
+#year {
+    color: rgb(12, 14, 41);
 }
 
 .daysgen {
@@ -119,8 +125,20 @@ i:hover {
 
 .dayGenerated {
    
+   cursor: pointer;
     width: 100%;
     padding: 0px 25px 25px 0px
+}
+
+
+
+.dayGenerated:hover {
+    transform: scale(1.5);
+}
+
+#datepick {
+   font-size: 2rem;
+   font-weight: bold;
 }
 
 

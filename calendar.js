@@ -2,9 +2,6 @@ const d = new Date();
 let currentMonth = d.getMonth()
 let currentDay = d.getDate()
 let currentYear = d.getFullYear()
-
-
-
 let monthName = [
     'January',
     'February',
@@ -20,15 +17,12 @@ let monthName = [
     'December',
 ];
 
-
-
 let monthDisplay = monthName[currentMonth];
 let monthDisplayQ = document.getElementById('month');
 monthDisplayQ.innerText=monthDisplay;
 let yearDisplay = currentYear;
 let yearDisplayQ = document.getElementById('year');
 yearDisplayQ.innerText = yearDisplay;
-
 
 function changeYear(plusMinus){
     let currentMonthDisplay = document.getElementById('month');
@@ -40,8 +34,7 @@ function changeYear(plusMinus){
          let daysToGen = getDays(yearChange.textContent,i+1)
         replaceHTML()
         generateDays(daysToGen+1)
-        getDays(yearDisplayQ.textContent,i+1);
-        
+        getDays(yearDisplayQ.textContent,i+1);   
     } else if(plusMinus =='plus') {
         let yearChange = document.getElementById('year');
          yearDisplay++;
@@ -54,7 +47,6 @@ function changeYear(plusMinus){
 };
 
 //month buttons
-
 //subtracting a month
 let yearChange = document.getElementById('year');
 function changeMonth(plusMinus) {
@@ -69,8 +61,7 @@ function changeMonth(plusMinus) {
         let daysToGen = getDays(yearChange.textContent,i+1)
         replaceHTML()
         generateDays(daysToGen+1)
-        getDays(yearDisplayQ.textContent,i+1);
-        
+        getDays(yearDisplayQ.textContent,i+1);   
     }
     //rolling back to previous year
     else 
@@ -83,7 +74,6 @@ function changeMonth(plusMinus) {
          generateDays(daysToGen+1)
         getDays(yearDisplayQ.textContent,i+1);
         }} 
-
 
         //adding a month
     else {
@@ -111,7 +101,6 @@ function changeMonth(plusMinus) {
         getDays(yearDisplayQ.textContent,i+1);
         }   
     }
-    
     };
 
     //function for getting days in a month
@@ -127,8 +116,6 @@ function changeMonth(plusMinus) {
     return firstDay;
   };
 
-  
-
   //function for generating days on the calendar table
   function generateDays(days){
     
@@ -138,30 +125,40 @@ function changeMonth(plusMinus) {
         const p = document.createElement('p');
         p.textContent = i
         day.insertAdjacentElement("beforeBegin",p).classList.add('dayGenerated')
-       
+        datePicker()
     }
   }
   
  generateDays(currentMonthDays)
-
- 
- 
 
  function replaceHTML(){
     let oldCalendar = document.getElementById('days');
     oldCalendar.innerHTML = '<p class="daysgen" id="0"></p><p class="daysgen" id="1"></p><p class="daysgen" id="2"></p><p class="daysgen" id= "3"></p><p class="daysgen" id="4"></p><p class="daysgen" id="5"></p><p class="daysgen" id="6"></p>'
  }
 
-
-
-
-//function for selecting a date
+//function for dispalying selected date by clicking on the calendar
 
 function datePicker(){
-    let dayPicked = document.getElementById('dayGenerated');
-    let dayPickedQ = document.getElementById('datepicked')
-    dayPicked.addEventListener('click', () => {
-        dayPickedQ.textContent = `${month.textContent}`
+    let dayPicked = document.querySelectorAll('.dayGenerated');
+    let dayPickedQ = document.getElementById('datepick')
     
+    dayPicked.forEach(dayPicked => {
+        dayPicked.addEventListener('click', ()=>{
+           dayPickedQ.textContent=`${monthDisplayQ.textContent} ${dayPicked.innerText}, ${yearDisplayQ.textContent}`;
+            let dayClear = document.querySelectorAll('.dayGenerated');
+            dayClear.forEach(dayClear => {
+                dayClear.style.backgroundColor="transparent";
+                dayClear.style.fontSize="";
+                dayClear.style.boxShadow="none"
+            })
+            dayPicked.style.fontSize='50px';
+            dayPicked.style.backgroundColor='';
+            dayPicked.style.color='rgb(12, 14, 41)';
+            dayPicked.style.boxShadow="5px 5px 10px 5px rgba(55, 55, 55, 0.25)"
+            
+            
+        })
     })
 }
+
+
